@@ -1,0 +1,150 @@
+<div id="cockpit" hidden>
+<header class="hdr">
+  <div class="hdr-brand">
+    <div class="hdr-logo" aria-hidden="true">♥</div>
+    <div>
+      <div class="hdr-title">ILMJ · Cockpit Comercial</div>
+      <div class="hdr-sub">B2B · Monitor de Performance 2026</div>
+    </div>
+  </div>
+  <div class="hdr-actions">
+    <span class="ck-src" id="ck-src">—</span>
+    <div class="status-dot" id="ck-dot"></div>
+    <button type="button" class="ck-btn btn-dark" id="ck-sync">↻ Atualizar da planilha</button>
+    <button type="button" class="ck-btn btn-teal" id="ck-pdf">⬇ PDF</button>
+  </div>
+</header>
+
+<nav class="tabs" role="tablist">
+  <button type="button" class="tab active" data-ck="new-sales" role="tab">New Sales</button>
+  <button type="button" class="tab" data-ck="pipeline" role="tab">Pipeline do quadro</button>
+  <button type="button" class="tab" data-ck="upsell" role="tab">Upsell</button>
+</nav>
+
+<div class="ck-empty" id="ck-empty" hidden></div>
+
+<!-- ══════════════ NEW SALES ══════════════ -->
+<div class="page active" id="ck-new-sales">
+  <div class="ck-hero">
+    <div class="hero-item"><div class="hero-lbl">Faturamento New Sales 2026</div><div class="hero-val lg" id="h-receita">—</div><div class="hero-sub">Caixa recebido em 2026 · DADOS GERAIS</div><div class="hero-tag" id="h-receita-tag">—</div></div>
+    <div class="hero-item"><div class="hero-lbl">Total Faturado 2026</div><div class="hero-val" id="h-fat2026">—</div><div class="hero-sub">New Sales + Upsell</div></div>
+    <div class="hero-item"><div class="hero-lbl">A faturar em 2027</div><div class="hero-val" id="h-fat2027">—</div><div class="hero-sub">Soma dos cartões do quadro</div></div>
+    <div class="hero-item ck-link" data-go="pipeline" tabindex="0" role="button"><div class="hero-lbl">Forecast em aberto</div><div class="hero-val" id="h-fc">—</div><div class="hero-sub" id="h-fc-sub">—</div></div>
+    <div class="hero-item"><div class="hero-lbl">Outbound 2026</div><div class="hero-val" id="h-out">—</div><div class="hero-sub" id="h-out-sub">Abordagens</div><div class="hero-tag" id="h-out-tag">—</div></div>
+    <div class="hero-item ck-link" data-board="1" tabindex="0" role="button"><div class="hero-lbl">Empresas no quadro</div><div class="hero-val" id="h-pipe">—</div><div class="hero-sub" id="h-pipe-sub">—</div></div>
+  </div>
+
+  <div class="slbl">KPIs · New Sales 2026</div>
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-lbl">Pitchs Comerciais</div><div class="kpi-val" id="k-pitch-val">—</div><div class="kpi-sub" id="k-pitch-sub">—</div>
+      <div class="kpi-bar"><div class="kpi-bar-track"><div class="kpi-bar-fill blue" id="k-pitch-bar" style="width:0%"></div></div></div>
+      <div class="kpi-foot"><div class="ck-badge" id="k-pitch-badge">—</div><span>meta: <strong id="k-pitch-meta">—</strong></span></div></div>
+    <div class="kpi"><div class="kpi-lbl">Propostas Enviadas</div><div class="kpi-val" id="k-prop-val">—</div><div class="kpi-sub" id="k-prop-sub">—</div>
+      <div class="kpi-bar"><div class="kpi-bar-track"><div class="kpi-bar-fill blue" id="k-prop-bar" style="width:0%"></div></div></div>
+      <div class="kpi-foot"><div class="ck-badge" id="k-prop-badge">—</div><span>meta: <strong id="k-prop-meta">—</strong></span></div></div>
+    <div class="kpi b"><div class="kpi-lbl">Forecast New Sales</div><div class="kpi-val sm" id="k-fc-val">—</div><div class="kpi-sub" id="k-fc-sub">—</div><div class="ck-badge bb" id="k-fc-badge">—</div></div>
+    <div class="kpi g"><div class="kpi-lbl">Negócios Fechados (Vendas)</div><div class="kpi-val sm" id="k-fe-val">—</div><div class="kpi-sub">Total vendido em 2026</div>
+      <div class="kpi-bar"><div class="kpi-bar-track"><div class="kpi-bar-fill green" id="k-fe-bar" style="width:0%"></div></div></div><div class="ck-badge" id="k-fe-badge">—</div></div>
+    <div class="kpi"><div class="kpi-lbl">% Meta Anual (Faturamento)</div><div class="kpi-val" id="k-pct-val">—</div><div class="kpi-sub" id="k-pct-sub">—</div>
+      <div class="kpi-bar"><div class="kpi-bar-track"><div class="kpi-bar-fill red" id="k-pct-bar" style="width:0%"></div></div></div><div class="ck-badge" id="k-pct-badge">—</div></div>
+  </div>
+
+  <div class="slbl">Pitchs Comerciais por Mês</div>
+  <div class="g1"><div class="ck-card"><div class="card-hdr"><div><div class="card-title">Pitchs Realizados</div><div class="card-sub">Comparativo 2024 · 2025 · 2026 · com meta</div></div>
+    <div class="leg"><div class="leg-item"><div class="leg-dot" style="background:#B0B8C1"></div>2024</div><div class="leg-item"><div class="leg-dot" style="background:#f97316"></div>2025</div><div class="leg-item"><div class="leg-dot" style="background:#D93B42"></div>2026</div><div class="leg-item"><div class="leg-line" style="border-color:#0f172a"></div>Meta</div></div></div>
+    <div class="ck-chart"><canvas id="c-pitch"></canvas></div></div></div>
+
+  <div class="slbl">Propostas Enviadas por Mês</div>
+  <div class="g1"><div class="ck-card"><div class="card-hdr"><div><div class="card-title">Propostas Enviadas</div><div class="card-sub">Comparativo 2023 · 2024 · 2025 · 2026 · com meta</div></div>
+    <div class="leg"><div class="leg-item"><div class="leg-dot" style="background:#6C8EAD"></div>2023</div><div class="leg-item"><div class="leg-dot" style="background:#B0B8C1"></div>2024</div><div class="leg-item"><div class="leg-dot" style="background:#f97316"></div>2025</div><div class="leg-item"><div class="leg-dot" style="background:#D93B42"></div>2026</div><div class="leg-item"><div class="leg-line" style="border-color:#0f172a"></div>Meta</div></div></div>
+    <div class="ck-chart"><canvas id="c-prop"></canvas></div></div></div>
+
+  <div class="g2">
+    <div class="ck-card"><div class="card-hdr"><div><div class="card-title">Forecast New Sales (R$)</div><div class="card-sub">Valor em oportunidades por mês · 2025 vs 2026</div></div>
+      <div class="leg"><div class="leg-item"><div class="leg-dot" style="background:#f97316"></div>2025</div><div class="leg-item"><div class="leg-dot" style="background:#D93B42"></div>2026</div></div></div>
+      <div class="ck-chart"><canvas id="c-fc"></canvas></div></div>
+    <div class="ck-card"><div class="card-hdr"><div><div class="card-title">Negócios Fechados (R$) vs Meta</div><div class="card-sub" id="c-fe-sub">2025 · 2026 vs meta mensal</div></div>
+      <div class="leg"><div class="leg-item"><div class="leg-dot" style="background:#f97316"></div>2025</div><div class="leg-item"><div class="leg-dot" style="background:#D93B42"></div>2026</div><div class="leg-item"><div class="leg-line" style="border-color:#0f172a"></div>Meta</div></div></div>
+      <div class="ck-chart"><canvas id="c-fe"></canvas></div></div>
+  </div>
+
+  <div class="slbl">Funil de Vendas 2026</div>
+  <div class="g2">
+    <div class="ck-card"><div class="card-hdr"><div><div class="card-title">Funil Comercial</div><div class="card-sub">Pitchs → Propostas → Empresas no quadro → Fechadas</div></div></div><div class="funnel" id="funnel-wrap"></div></div>
+    <div class="ck-card"><div class="card-hdr"><div><div class="card-title">Taxas de Conversão</div><div class="card-sub">% de passagem entre etapas</div></div></div><div class="ck-chart"><canvas id="c-funnel"></canvas></div></div>
+  </div>
+</div>
+
+<!-- ══════════════ PIPELINE (QUADRO) ══════════════ -->
+<div class="page" id="ck-pipeline">
+  <div class="ck-note">Esta aba lê o <b>Quadro de propostas</b> ao vivo. Arrastar um cartão de etapa, registrar uma entrada ou marcar “Negócio fechado” muda os números daqui na hora. Clique numa empresa para abrir a ficha.</div>
+  <div class="slbl">Empresas por etapa</div>
+  <div class="kpis" id="pl-stages"></div>
+
+  <div class="g2">
+    <div class="ck-card"><div class="card-hdr"><div><div class="card-title">Valor por etapa</div><div class="card-sub">Soma das propostas de cada empresa · etapas e cores do quadro</div></div></div><div class="ck-chart"><canvas id="c-pl-stage"></canvas></div></div>
+    <div class="ck-card"><div class="card-hdr"><div><div class="card-title">Serviços mais propostos</div><div class="card-sub">Número de empresas que receberam cada serviço</div></div></div><div class="ck-chart tall"><canvas id="c-pl-svc"></canvas></div></div>
+  </div>
+
+  <div class="g2">
+    <div class="ck-card"><div class="card-hdr"><div><div class="card-title">🏆 Maiores oportunidades em aberto</div><div class="card-sub">Fora da etapa de negócio fechado · ordenado por valor</div></div></div><div id="pl-top"></div></div>
+    <div class="ck-card"><div class="card-hdr"><div><div class="card-title">⚠️ Sem atualização há mais de 45 dias</div><div class="card-sub">Em aberto, pela data da última entrada da ficha</div></div></div><div id="pl-stale"></div></div>
+  </div>
+
+  <div class="slbl">Negócios fechados no quadro</div>
+  <div class="ck-card"><div class="pipe-list" id="pl-won"></div></div>
+</div>
+
+<!-- ══════════════ UPSELL ══════════════ -->
+<div class="page" id="ck-upsell">
+  <div class="ck-hero">
+    <div class="hero-item"><div class="hero-lbl">Fechados Upsell 2026</div><div class="hero-val lg" id="h-up-receita">—</div><div class="hero-sub" id="h-up-receita-sub">—</div><div class="hero-tag" id="h-up-receita-tag">—</div></div>
+    <div class="hero-item"><div class="hero-lbl">Forecast Upsell</div><div class="hero-val" id="h-up-fc">—</div><div class="hero-sub" id="h-up-fc-sub">—</div></div>
+    <div class="hero-item"><div class="hero-lbl">% Meta Upsell</div><div class="hero-val" id="h-up-pct">—</div><div class="hero-sub" id="h-up-pct-sub">—</div><div class="hero-tag" id="h-up-pct-tag">—</div></div>
+    <div class="hero-item"><div class="hero-lbl">Propostas Upsell 2026</div><div class="hero-val" id="h-up-props">—</div><div class="hero-sub" id="h-up-props-sub">—</div><div class="hero-tag" id="h-up-props-tag">—</div></div>
+    <div class="hero-item"><div class="hero-lbl">Oportunidades na aba Upsell</div><div class="hero-val" id="h-up-ops">—</div><div class="hero-sub" id="h-up-ops-sub">—</div></div>
+  </div>
+
+  <div class="slbl">KPIs · Upsell 2026</div>
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-lbl">Propostas Upsell</div><div class="kpi-val" id="k-up-prop-val">—</div><div class="kpi-sub" id="k-up-prop-sub">—</div>
+      <div class="kpi-bar"><div class="kpi-bar-track"><div class="kpi-bar-fill blue" id="k-up-prop-bar" style="width:0%"></div></div></div><div class="ck-badge" id="k-up-prop-badge">—</div></div>
+    <div class="kpi b"><div class="kpi-lbl">Forecast Upsell</div><div class="kpi-val sm" id="k-up-fc-val">—</div><div class="kpi-sub" id="k-up-fc-sub">—</div><div class="ck-badge bb" id="k-up-fc-badge">—</div></div>
+    <div class="kpi g"><div class="kpi-lbl">Fechados Upsell</div><div class="kpi-val sm" id="k-up-fe-val">—</div><div class="kpi-sub">Acumulado 2026</div>
+      <div class="kpi-bar"><div class="kpi-bar-track"><div class="kpi-bar-fill green" id="k-up-fe-bar" style="width:0%"></div></div></div><div class="ck-badge" id="k-up-fe-badge">—</div></div>
+    <div class="kpi y"><div class="kpi-lbl">Ticket Médio Mensal</div><div class="kpi-val sm" id="k-up-ticket">—</div><div class="kpi-sub">Média dos meses com fechamento</div></div>
+  </div>
+
+  <div class="slbl">Propostas Upsell por Mês</div>
+  <div class="g1"><div class="ck-card"><div class="card-hdr"><div><div class="card-title">Propostas Upsell Enviadas</div><div class="card-sub">2025 · 2026 · com meta</div></div>
+    <div class="leg"><div class="leg-item"><div class="leg-dot" style="background:#f97316"></div>2025</div><div class="leg-item"><div class="leg-dot" style="background:#D93B42"></div>2026</div><div class="leg-item"><div class="leg-line" style="border-color:#0f172a"></div>Meta</div></div></div>
+    <div class="ck-chart"><canvas id="c-up-prop"></canvas></div></div></div>
+
+  <div class="g2">
+    <div class="ck-card"><div class="card-hdr"><div><div class="card-title">Forecast Upsell (R$)</div><div class="card-sub">2025 vs 2026</div></div>
+      <div class="leg"><div class="leg-item"><div class="leg-dot" style="background:#f97316"></div>2025</div><div class="leg-item"><div class="leg-dot" style="background:#D93B42"></div>2026</div></div></div>
+      <div class="ck-chart"><canvas id="c-up-fc"></canvas></div></div>
+    <div class="ck-card"><div class="card-hdr"><div><div class="card-title">Fechados Upsell (R$) vs Meta</div><div class="card-sub">2025 · 2026 vs meta mensal</div></div>
+      <div class="leg"><div class="leg-item"><div class="leg-dot" style="background:#f97316"></div>2025</div><div class="leg-item"><div class="leg-dot" style="background:#D93B42"></div>2026</div><div class="leg-item"><div class="leg-line" style="border-color:#0f172a"></div>Meta</div></div></div>
+      <div class="ck-chart"><canvas id="c-up-fe"></canvas></div></div>
+  </div>
+
+  <div class="slbl">Oportunidades da aba Upsell</div>
+  <div class="g2">
+    <div class="ck-card"><div class="card-hdr"><div><div class="card-title">Serviços Upsell</div><div class="card-sub">Valor orçado por serviço</div></div></div><div class="ck-chart tall"><canvas id="c-up-svc"></canvas></div></div>
+    <div class="ck-card"><div class="card-hdr"><div><div class="card-title">🏆 Top oportunidades</div><div class="card-sub">Ordenado por valor · status da planilha</div></div></div><div id="up-ranking"></div></div>
+  </div>
+
+  <div class="ck-filters">
+    <select id="up-filter-status" aria-label="Filtrar por status"><option value="">Todos os status</option></select>
+    <input id="up-search" type="search" placeholder="Buscar empresa ou serviço…" aria-label="Buscar">
+    <span id="up-count"></span>
+  </div>
+  <div class="ck-card ck-tablewrap">
+    <table class="cp-table"><thead><tr>
+      <th class="cp-th" data-col="data">Data</th><th class="cp-th" data-col="emp">Empresa</th><th class="cp-th" data-col="status">Status</th>
+      <th class="cp-th" data-col="val" style="text-align:right">Valor</th><th class="cp-th" data-col="svc">Serviços</th>
+    </tr></thead><tbody id="up-tbody"></tbody></table>
+  </div>
+</div>
+</div>
