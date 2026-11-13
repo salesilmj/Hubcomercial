@@ -29,3 +29,8 @@ A página roda como **Artifact do Claude** (claude.ai) e usa as capacidades `db`
 - Um cartão só muda de etapa quando o STATUS muda na planilha. Movimentos manuais são preservados.
 - Entradas criadas à mão nunca são apagadas. Empresas removidas do quadro não voltam.
 - Sincroniza ao abrir (se a última leitura tiver mais de 10 min e o acesso ao Drive já tiver sido permitido) ou pelo botão.
+- Leitura pelo conector do Google Drive confirmada em produção em 13/11/2026.
+
+## Dados
+
+Este repositório é **público** e guarda só o código. Os dados dos clientes ficam no banco do artifact e na planilha, nunca aqui.
